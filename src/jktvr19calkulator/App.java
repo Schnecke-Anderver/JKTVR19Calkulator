@@ -25,22 +25,26 @@ public class App {
         System.out.println("Введите операцию: (+,-,*,/)");
         String znak = scanner.nextLine();
         System.out.print("Результат: ");
-        if ("+".equals(znak)){
-            System.out.println(number1 + number2);
-        }
-        if ("-".equals(znak)){
-            System.out.println(number1 - number2);
-        }
-        if ("*".equals(znak)){
-            System.out.println(number1 * number2);
-        }
-        if ("/".equals(znak)){
-            if (number2 != 0){
-                System.out.println(number1 / number2);
-            }else {
-                System.out.println("На ноль делить нельзя!");
-            }         
-        }
+        if (null != znak)switch (znak) {
+                case "+":
+                    System.out.println(number1 + number2);
+                    break;
+                case "-":
+                    System.out.println(number1 - number2);
+                    break;
+                case "*":
+                    System.out.println(number1 * number2);
+                    break;
+                case "/":
+                    if (number2 != 0){
+                        System.out.println(number1 / number2);
+                    }else {
+                        System.out.println("На ноль делить нельзя!");
+                    }       break;
+                default:
+                    System.out.println("Выберите перечисленные операции");
+                    break;
+            }
             System.out.println("Для продолжения нажмите \"y\", для выхода нажмите любую другую");
             repeat = scanner.nextLine();
        }while("y".equals(repeat));
